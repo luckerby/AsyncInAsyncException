@@ -13,6 +13,10 @@ namespace AsyncInAsyncException
 
     class AsyncInAsyncException
     {
+        private class InnerType
+        {
+            public int id;
+        }
         public async Task CallerMethod()
         {
             await CalleeMethod();
@@ -20,7 +24,9 @@ namespace AsyncInAsyncException
 
         public async Task CalleeMethod()
         {
-            throw (new NotImplementedException());
+            InnerType myType = new InnerType();
+            myType = null;
+            var myValue = myType.id;
         }
     }
 
