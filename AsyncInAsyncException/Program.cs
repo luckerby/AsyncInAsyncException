@@ -19,10 +19,10 @@ namespace AsyncInAsyncException
         }
         public async Task CallerMethod()
         {
-            await CalleeMethod();
+            await CalleeMethod(5, "hello");
         }
 
-        public async Task CalleeMethod()
+        public async Task CalleeMethod(int firstParameter, string secondParameter)
         {
             InnerType myType = new InnerType();
             myType = null;
