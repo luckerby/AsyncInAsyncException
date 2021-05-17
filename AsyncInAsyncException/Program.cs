@@ -26,7 +26,11 @@ namespace AsyncInAsyncException
         {
             InnerType myType = new InnerType();
             myType = null;
-            var myValue = myType.id;
+            try
+            {
+                var myValue = myType.id;
+            }
+            catch {}
         }
     }
 
